@@ -1,0 +1,43 @@
+# AWS
+
+1. EC2(Elastic Compute Cloud)[RAM, CPU, AMI(OS), Networking, EBS(Ổ cứng)]
+
+- Một số services
+  - EC2, ECS
+  - Lightsail, Beanstalk, Lamda
+  - EKS, EBS, ELB, ASG
+
+* Chi phí
+  - On-demand: Dùng bao nhiêu trả bấy nhiêu theo cấu hình và thời gian
+  - Spot instances: Đấu thầu giá muốn trả
+  - Reserved instances: Commitment sử dụng lâu dài và được phép trả sau chỉ cần trả trước 1 tí
+  - Delicated hosts: Thuê luôn phần cứng của AWS
+* IP
+  - Public: IP duy nhất trên internet
+  - Private: IP duy nhất trong private network
+  - Elastic: Set IP static cho instance vì khi stop/start nó có thể bị thay đổi
+  - EIP: là 1 IPv4 và có thể attach vào 1 EC2 instance ( Mình đang làm trên con "Learn aws")
+  **Cố gắng hạn chế sử dụng EIP**
+    - Thay vì vậy có thể sử dụng DNS name kết hợp với Route 53
+    - Hoặc sử dụng 1 Load Balancer
+* Security Group
+  - Là Virtual Firewakk để quản lý truy cập vào instance
+  + Quản lý access vào EC2 theo IP, IP range, port
+  + 1SG tối đa 50 rules inbound và outbound và tối đa 5SG cho 1 instance
+* Lưu trữ trong EC2
+  - EBS lưu trữ dưới dang block
+  - 1EBS attach duy nhất vào 1 con EC2 trong cùng AZ và có thể sử dụng nhiều EBS attach vào 1 con EC2
+  - EBS snapshots trong AWS
+    + Giải quyết bài toán not cross AZ 1 EBS volume
+  - Các loại EBS
+    + SSD
+    + HDD
+* AWS AMI(Machine Image)
+  - Custom EC2 theo mong muốn
+  - Có market AMI để mua về
+* AWS EFS( Elastic file system )
+  - Quản lý NFS có thể mount vào nhiều EC2
+  - Các instance khác nhau có thể dùng chung EFS
+* Bashion host
+  - Quản lý instance hoặc DB private đặt trên private subnet
+  - BS được đặt trong public subnet của AWS VPC
