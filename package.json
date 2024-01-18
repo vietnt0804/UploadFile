@@ -4,7 +4,7 @@
   "description": "",
   "main": "uploadserver.js",
   "dependencies": {
-    "aws-sdk": "^2.1037.0",
+    "aws-sdk": "^2.1526.0",
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
     "express": "^4.17.1",
